@@ -33,6 +33,7 @@ class PostSeeder extends Seeder
             $post->title = $faker->catchPhrase();
             $post->content = $faker->paragraphs(3, true);
             $post->slug = Str::slug($post->title);
+            $post->published = rand(0, 1);
             $post->save();
             $post->technologies()->attach($faker->randomElements($technologies_ids, rand(0, 2)));
         }
