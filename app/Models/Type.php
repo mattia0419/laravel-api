@@ -9,6 +9,9 @@ class Type extends Model
 {
     use HasFactory;
 
+
+    protected $hidden = ['pivot'];
+
     public function posts(){
         return $this->hasMany(Post::class);
     }
