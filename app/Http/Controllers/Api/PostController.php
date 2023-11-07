@@ -18,8 +18,8 @@ class PostController extends Controller
     {
         $posts = Post::select('id', 'type_id', 'title', 'slug')
         ->where('published', 1)
-        ->with('technologies:id,label,color', 'types:id,name,color')
-        ->paginate(12);
+        ->with('type:id,name,color', 'technologies:id,label,color')
+        ->paginate(9);
         return response()->json($posts);
     }
 
